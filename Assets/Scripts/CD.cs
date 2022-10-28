@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class CD : MonoBehaviour
 {
-    public GameManager gm;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
-        {
-            Destroy(other);
-            gm.cds += 1;
-        }
+        ScoreSystem.score += 1;
+        Destroy(gameObject);
     }
 
     // Start is called before the first frame update

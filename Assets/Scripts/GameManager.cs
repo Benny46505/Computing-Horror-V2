@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEngine.UI;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
 
-    TextMeshProUGUI cdcount;
+    public TextMeshProUGUI cdcount;
     public int cds;
 
     // Start is called before the first frame update
@@ -19,6 +18,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cdcount.text = "CD's Found: " + cds;
+        cdcount.text = "CD's Found: " + cds + "/5";
     }
 }
