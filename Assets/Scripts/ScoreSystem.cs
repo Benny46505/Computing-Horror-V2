@@ -12,6 +12,6 @@ public class ScoreSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoretext.GetComponent<TextMeshProUGUI>().text = "CD's Collected: " + score;
+        scoretext.GetComponent<TextMeshProUGUI>().text = "CD's Collected: " + score + "/5";
     }
 }

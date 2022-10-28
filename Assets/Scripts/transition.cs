@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class CD : MonoBehaviour
+public class transition : MonoBehaviour
 {
-
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-       ScoreSystem.score += 1;
-       Destroy(gameObject);
+        if (other.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("Win");
+        }
     }
 
     // Start is called before the first frame update
