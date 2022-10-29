@@ -183,9 +183,9 @@ MonoBehaviour:
   slopeInfluenceOnSpeed: 1
   maxStairRise: 0.25
   stepUpSpeed: 0.2
-  canJump: 1
+  canJump: 0
   holdJump: 0
-  jumpEnhancements: 1
+  jumpEnhancements: 0
   Jumped: 0
   jumpKey_L: 32
   jumpPower: 40
@@ -193,7 +193,7 @@ MonoBehaviour:
   decentMultiplier: 2.5
   tapJumpMultiplier: 2.1
   isSliding: 0
-  canSlide: 1
+  canSlide: 0
   slidingDeceleration: 150
   slidingTransitionSpeed: 4
   maxFlatSlideDistance: 10
@@ -228,10 +228,17 @@ MonoBehaviour:
   enableFootstepSounds: 1
   footstepTriggeringMode: 0
   stepTiming: 0.15
-  footstepSoundSet: []
+  footstepSoundSet:
+  - profileTriggerType: 0
+    _Materials:
+    - {fileID: 2100000, guid: 668e2e3236259b249b592392b35a0c6e, type: 2}
+    _physicMaterials: []
+    _Layers: []
+    footstepClips:
+    - {fileID: 8300000, guid: b35cd96205d31974696b0d10e284af7c, type: 3}
   enableHeadbob: 1
-  headbobSpeed: 1
-  headbobPower: 1
+  headbobSpeed: 1.63
+  headbobPower: 2.88
   ZTilt: 3
   enableSurvivalStats: 0
   defaultSurvivalStats:
@@ -251,7 +258,7 @@ MonoBehaviour:
     hasLowHealth: 0
     isStarving: 0
     isDehydrated: 0
-  interactKey_L: 0
+  interactKey_L: 323
   interactRange: 4
   interactableLayer:
     serializedVersion: 2

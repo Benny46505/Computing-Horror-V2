@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CD : MonoBehaviour
 {
+    public AudioSource pickupsound;
 
     private void OnTriggerEnter(Collider other)
     {
-       ScoreSystem.score += 1;
-       Destroy(gameObject);
+        pickupsound.Play();
+        ScoreSystem.score += 1;
+        Destroy(gameObject);
     }
 
     // Start is called before the first frame update
