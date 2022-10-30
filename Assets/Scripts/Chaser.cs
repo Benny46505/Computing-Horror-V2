@@ -27,11 +27,41 @@ public class Chaser : MonoBehaviour
         {
             phaseEscape();
         }
+
+        speedphases();
     }
 
     void phaseEscape()
     {
         escapeVL.SetActive(true);
         FindVL.SetActive(false);
+    }
+
+    void speedphases()
+    {
+        if (ScoreSystem.score == 1)
+        {
+            ai.speed = 1;
+        }
+
+        if (ScoreSystem.score == 2)
+        {
+            ai.speed = 2;
+        }
+
+        if (ScoreSystem.score == 3)
+        {
+            ai.speed = 3;
+        }
+
+        if (ScoreSystem.score == 4)
+        {
+            ai.speed = 4;
+        }
+
+        if (ScoreSystem.score == 5)
+        {
+            ai.speed = 5;
+        }
     }
 }
