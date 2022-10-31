@@ -29,7 +29,7 @@ public class WinScene : MonoBehaviour
 
     IEnumerator CloseGame()
     {
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(10);
         {
             Application.Quit();
             Debug.LogWarning("Only Works In Builds");

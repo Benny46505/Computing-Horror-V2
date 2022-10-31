@@ -133,11 +133,11 @@ MonoBehaviour:
   lockAndHideMouse: 1
   autoGenerateCrosshair: 1
   showCrosshairIn3rdPerson: 0
-  drawPrimitiveUI: 0
+  drawPrimitiveUI: 1
   crosshairSprite: {fileID: 0}
   cameraPerspective: 0
-  automaticallySwitchPerspective: 1
-  perspectiveSwitchingKey_L: 0
+  automaticallySwitchPerspective: 0
+  perspectiveSwitchingKey_L: 278
   mouseInputInversion: 0
   Sensitivity: 8
   rotationWeight: 4
@@ -157,7 +157,7 @@ MonoBehaviour:
   inputResponseFiltering: 2.5
   enableMovementControl: 1
   walkingSpeed: 140
-  sprintingSpeed: 260
+  sprintingSpeed: 427
   crouchingSpeed: 45
   decelerationSpeed: 240
   sprintKey_L: 304
@@ -219,11 +219,11 @@ MonoBehaviour:
     groundPhysicMaterial: {fileID: 0}
   enableStaminaSystem: 1
   jumpingDepletesStamina: 1
-  Stamina: 50
+  Stamina: 100
   currentStaminaLevel: 0
-  s_minimumStaminaToSprint: 5
-  s_depletionSpeed: 2
-  s_regenerationSpeed: 1.2
+  s_minimumStaminaToSprint: 0
+  s_depletionSpeed: 3.8
+  s_regenerationSpeed: 3.5
   s_JumpStaminaDepletion: 5
   enableFootstepSounds: 1
   footstepTriggeringMode: 0
@@ -237,8 +237,8 @@ MonoBehaviour:
     footstepClips:
     - {fileID: 8300000, guid: b35cd96205d31974696b0d10e284af7c, type: 3}
   enableHeadbob: 1
-  headbobSpeed: 1.63
-  headbobPower: 2.88
+  headbobSpeed: 1.95
+  headbobPower: 4.11
   ZTilt: 3
   enableSurvivalStats: 0
   defaultSurvivalStats:

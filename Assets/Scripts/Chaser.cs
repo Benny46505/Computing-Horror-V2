@@ -41,22 +41,22 @@ public class Chaser : MonoBehaviour
     {
         if (ScoreSystem.score == 1)
         {
-            ai.speed = 1;
+            ai.speed = 2;
         }
 
         if (ScoreSystem.score == 2)
         {
-            ai.speed = 2;
+            ai.speed = 4;
         }
 
         if (ScoreSystem.score == 3)
         {
-            ai.speed = 3;
+            ai.speed = 6;
         }
 
         if (ScoreSystem.score == 4)
         {
-            ai.speed = 4;
+            ai.speed = 8;
         }
 
         if (ScoreSystem.score == 5)
