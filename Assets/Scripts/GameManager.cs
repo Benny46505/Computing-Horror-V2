@@ -61,6 +61,9 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             pausePanel.SetActive(true);
             gameplayPanel.SetActive(false);
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
 
@@ -69,6 +72,10 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
             pausePanel.SetActive(false);
             gameplayPanel.SetActive(true);
+
+
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
         if (ScoreSystem.score == 5)
