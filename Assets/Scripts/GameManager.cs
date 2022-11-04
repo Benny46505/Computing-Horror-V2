@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       timer.text = "Time: " + Time.fixedTime;
+        timer.text = "Time: " + Time.fixedTime;
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
        {
             findtext.SetActive(false);
             Ambients.SetActive(false);
-        }
+       }
    
     }
 }

@@ -8,7 +8,7 @@ public class menu : MonoBehaviour
     public GameObject LoadingPanel;
     public GameObject MainPanel;
 
-    public GameObject beatengametag;
+    public GameObject beatengametag, beatengametag2, beatengametag3;
 
     private void Start()
     {
@@ -38,6 +38,27 @@ public class menu : MonoBehaviour
         if (WinScene.gameBeaten == true)
         {
             beatengametag.SetActive(true);
+            PlayerPrefs.SetInt("Beaten Once", beatengametag ? 1 : 0);
+        }
+        else
+        {
+            beatengametag.SetActive(false);
+        }
+
+        if (WinScene.gameBeaten2 == true)
+        {
+            beatengametag.SetActive(true);
+            PlayerPrefs.SetInt("Beaten Once", beatengametag2 ? 1 : 0);
+        }
+        else
+        {
+            beatengametag.SetActive(false);
+        }
+
+        if (WinScene.gameBeaten3 == true)
+        {
+            beatengametag.SetActive(true);
+            PlayerPrefs.SetInt("Beaten Once", beatengametag3 ? 1 : 0);
         }
         else
         {

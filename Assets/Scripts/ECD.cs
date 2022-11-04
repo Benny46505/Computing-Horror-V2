@@ -1,52 +1,69 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ECD : MonoBehaviour
 {
-    [SerializeField] GameObject self;
+    
 
-    float regenTime = 0;
+    //Positions
+    public Transform respawn;
 
-    float finishRegen = 10;
-
-    bool isDeactived;
+    int amount = 1;
 
     public AudioSource pickupsound;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        pickupsound.Play();
-        EndlessModeScore.Escore += 1;
+        if (other.CompareTag("Player"))
+        {
+            //Starts Delay of Collection
+            StartCoroutine(Collection());
+        }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (isDeactived)
+
+        //Triggers Method of Checking How Much CD's Are Collected
+        Value();
+    }
+
+    IEnumerator Collection()
+    {
+        yield return new WaitForSeconds(0.5f);
         {
-            
-            self.GetComponent<BoxCollider>().enabled = false;
+            pickupsound.Play();
+            EndlessModeScore.Escore += amount;
         }
-        else if (!isDeactived)
+    }
+
+
+    //Checking How Much CD's Are Collected
+    void Value()
+    {
+        if (EndlessModeScore.Escore == 3)
         {
-            self.GetComponent<BoxCollider>().enabled = true;
+            amount = 3;
         }
 
-        if (isDeactived)
+        if (EndlessModeScore.Escore == 6)
         {
-            regenTime += 1 * Time.deltaTime;
-            if (regenTime >= finishRegen)
-            {
-                isDeactived = false;
-                regenTime = 0;
-            }
+            amount = 6;
+        }
+
+
+        if (EndlessModeScore.Escore == 9)
+        {
+            amount = 9;
+        }
+
+        if (EndlessModeScore.Escore == 12)
+        {
+            amount = 12;
         }
     }
 

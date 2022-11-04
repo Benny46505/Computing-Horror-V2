@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class WinScene : MonoBehaviour
 {
-    public static bool gameBeaten;
+    public static bool gameBeaten, gameBeaten2, gameBeaten3;
+
+    public GameObject endtime;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +29,19 @@ public class WinScene : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
             Debug.LogWarning("Going Back To Main");
+        }
+    }
+
+    void BeatenTimes()
+    {
+        if (gameBeaten == true)
+        {
+            gameBeaten2 = true;
+        }
+
+        if (gameBeaten == true && gameBeaten2 == true)
+        {
+            gameBeaten3 = true;
         }
     }
 

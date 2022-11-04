@@ -9,12 +9,14 @@ public class Static : MonoBehaviour
     {
         ScoreSystem.score = 0;
         EndlessModeScore.Escore = 0;
+        HighScore.InNormal = false;
+        HighScore.InEndless = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.Comma))
         {
             ScoreSystem.score = 0;
             EndlessModeScore.Escore = 0;
