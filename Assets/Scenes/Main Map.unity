@@ -4890,6 +4890,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1020493320616497518, guid: 48fa98ac83f49be439b011f0e751b09c, type: 3}
   m_PrefabInstance: {fileID: 1038119561}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1041190331 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7830550381504306321, guid: 836b9ba73fdc61e48b6b8c8a166fa674, type: 3}
+  m_PrefabInstance: {fileID: 627548055}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1090682215
 GameObject:
   m_ObjectHideFlags: 0
@@ -7519,6 +7524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1585067215}
   - component: {fileID: 1585067216}
+  - component: {fileID: 1585067217}
   m_Layer: 0
   m_Name: Witch Body
   m_TagString: Untagged
@@ -7591,6 +7597,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1585067217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585067214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f40242825df7f4ab8ffe46043f0fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useStaticMode: 1
 --- !u!1001 &1598917148
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7680,6 +7699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1636421228}
   - component: {fileID: 1636421229}
+  - component: {fileID: 1636421230}
   m_Layer: 0
   m_Name: Witch Head
   m_TagString: Untagged
@@ -7752,6 +7772,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1636421230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636421227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f40242825df7f4ab8ffe46043f0fd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useStaticMode: 1
 --- !u!1001 &1641962842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9089,6 +9122,8 @@ MonoBehaviour:
   escapeVL: {fileID: 341474078}
   ai: {fileID: 2003005426}
   player: {fileID: 1418008472}
+  sightRange: 0
+  waitTime: 2
 --- !u!195 &2003005426
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -10264,6 +10299,7 @@ GameObject:
   - component: {fileID: 2194960254997192959}
   - component: {fileID: 2194960254997192960}
   - component: {fileID: 2194960254997192961}
+  - component: {fileID: 2194960254997192962}
   m_Layer: 0
   m_Name: GameManager V2
   m_TagString: Untagged
@@ -10291,6 +10327,7 @@ MonoBehaviour:
   timer: {fileID: 982537283}
   exitdoorC: {fileID: 362436815}
   exitdoorO: {fileID: 1921584785}
+  enemy: {fileID: 2003005423}
   pausePanel: {fileID: 1658771451}
   gameplayPanel: {fileID: 974170348}
 --- !u!114 &2194960254997192960
@@ -10317,6 +10354,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c98367ea8e669942948e64d0558a8df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2194960254997192962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2194960254997192958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a43fba60bbe5674b91774bdc972a2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerView: {fileID: 1041190331}
 --- !u!222 &2194960255004975090
 CanvasRenderer:
   m_ObjectHideFlags: 0
