@@ -12,6 +12,10 @@ public class menu : MonoBehaviour
 
     private void Start()
     {
+        beatengametag3.SetActive(false);
+        beatengametag2.SetActive(false);
+        beatengametag.SetActive(false);
+
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
@@ -35,40 +39,69 @@ public class menu : MonoBehaviour
 
     void GameBeaten()
     {
-        if (WinScene.gameBeaten == true)
+        if (WinScene.progress == 1)
         {
             beatengametag.SetActive(true);
-            PlayerPrefs.SetInt("Beaten Once", beatengametag ? 1 : 0);
-        }
-        else
-        {
-            beatengametag.SetActive(false);
+            beatengametag2.SetActive(false);
+            beatengametag3.SetActive(false);
         }
 
-        if (WinScene.gameBeaten2 == true)
+        if (WinScene.progress == 2)
         {
             beatengametag.SetActive(true);
-            PlayerPrefs.SetInt("Beaten Once", beatengametag2 ? 1 : 0);
-        }
-        else
-        {
-            beatengametag.SetActive(false);
+            beatengametag2.SetActive(true);
+            beatengametag3.SetActive(false);
         }
 
-        if (WinScene.gameBeaten3 == true)
+        if (WinScene.progress == 3)
         {
             beatengametag.SetActive(true);
-            PlayerPrefs.SetInt("Beaten Once", beatengametag3 ? 1 : 0);
+            beatengametag2.SetActive(true);
+            beatengametag3.SetActive(true);
         }
-        else
+
+    }
+
+    void GameBeatenSaves()
+    {
+        if (WinScene.progress == 1)
         {
-            beatengametag.SetActive(false);
+            PlayerPrefs.SetInt("Progress", WinScene.progress);
+            PlayerPrefs.Save();
+            Debug.LogWarning("progress was saved to 1");
+        }
+
+        if (WinScene.progress == 2)
+        {
+            PlayerPrefs.SetInt("Progress", WinScene.progress);
+            PlayerPrefs.Save();
+            Debug.LogWarning("progress was saved to 2");
+        }
+
+        if (WinScene.progress == 3)
+        {
+            PlayerPrefs.SetInt("Progress", WinScene.progress);
+            PlayerPrefs.Save();
+            Debug.LogWarning("progress was saved to 3");
         }
     }
 
     private void Update()
     {
         GameBeaten();
+        GameBeatenSaves();
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            WinScene.progress += 1;
+            Debug.Log("progress was increased by 1");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            WinScene.progress -= 1;
+            Debug.Log("progress was reduced by 1");
+        }
     }
 
 }

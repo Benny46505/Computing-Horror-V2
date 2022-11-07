@@ -6,16 +6,14 @@ using UnityEngine;
 
 public class WinScene : MonoBehaviour
 {
-    public static bool gameBeaten, gameBeaten2, gameBeaten3;
+    public static int progress;
 
     public GameObject endtime;
-
-
 
     // Start is called before the first frame update
     void Start()
     {
-        gameBeaten = true;
+        progress += 1;
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
@@ -34,14 +32,9 @@ public class WinScene : MonoBehaviour
 
     void BeatenTimes()
     {
-        if (gameBeaten == true)
+        if (progress >= 4)
         {
-            gameBeaten2 = true;
-        }
-
-        if (gameBeaten == true && gameBeaten2 == true)
-        {
-            gameBeaten3 = true;
+            progress = 3;
         }
     }
 

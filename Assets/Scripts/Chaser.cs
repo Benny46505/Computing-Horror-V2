@@ -8,8 +8,16 @@ public class Chaser : MonoBehaviour
     public GameObject FindVL, escapeVL;
 
     public NavMeshAgent ai;
+
     public Transform player;
     Vector3 dest;
+
+
+    //Status
+    public float sightRange;
+    public float waitTime = 2;
+    bool inRange;
+    LayerMask WhatisPlayer;
 
     // Start is called before the first frame update
     void Start()
@@ -22,14 +30,19 @@ public class Chaser : MonoBehaviour
     {
         dest = player.position;
         ai.destination = dest;
-
         if (ScoreSystem.score == 5)
         {
             phaseEscape();
         }
-
         speedphases();
+
+        inRange = Physics.CheckSphere(transform.position, sightRange, WhatisPlayer);
+
+        if (!inRange)
+            Waiting();
     }
+
+    #region Extras Methods
 
     void phaseEscape()
     {
@@ -64,4 +77,11 @@ public class Chaser : MonoBehaviour
             ai.speed = 5;
         }
     }
+
+    void Waiting()
+    {
+        
+    }
+
+    #endregion
 }

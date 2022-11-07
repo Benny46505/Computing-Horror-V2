@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     #region General / Extras
     public TextMeshProUGUI timer;
     public GameObject exitdoorC, exitdoorO;
+    public GameObject enemy;
     #endregion
 
 
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        timer.text = "Time: " + Time.fixedTime;
+
         //Extras
         pausePanel.SetActive(false);
 
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             pausePanel.SetActive(true);
             gameplayPanel.SetActive(false);
+            enemy.SetActive(false);
 
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
@@ -72,7 +76,7 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
             pausePanel.SetActive(false);
             gameplayPanel.SetActive(true);
-
+            enemy.SetActive(true);
 
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;

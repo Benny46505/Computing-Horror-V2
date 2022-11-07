@@ -5,24 +5,23 @@ using UnityEngine;
 
 public class ECD : MonoBehaviour
 {
-    
-
-    //Positions
-    public Transform respawn;
 
     int amount = 1;
 
     public AudioSource pickupsound;
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            //Starts Delay of Collection
-            StartCoroutine(Collection());
-        }
+        pickupsound.Play();
+        EndlessModeScore.Escore += amount;
     }
 
+
+    private void OnTriggerExit(Collider other)
+    {
+        pickupsound.Play();
+        EndlessModeScore.Escore += amount;
+    }
 
     // Update is called once per frame
     void Update()
@@ -31,16 +30,6 @@ public class ECD : MonoBehaviour
         //Triggers Method of Checking How Much CD's Are Collected
         Value();
     }
-
-    IEnumerator Collection()
-    {
-        yield return new WaitForSeconds(0.5f);
-        {
-            pickupsound.Play();
-            EndlessModeScore.Escore += amount;
-        }
-    }
-
 
     //Checking How Much CD's Are Collected
     void Value()
