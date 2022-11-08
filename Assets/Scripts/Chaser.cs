@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Chaser : MonoBehaviour
 {
-    public Collider Insigh
 
     public GameObject FindVL, escapeVL;
 
@@ -14,22 +13,7 @@ public class Chaser : MonoBehaviour
     public Transform player;
     Vector3 dest;
 
-    float speed = 3.5f, defaultSpeed;
-
-    private void OnTriggerExit(Collider other)
-    {
-        speed -= 2;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        speed = defaultSpeed;
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        speed = defaultSpeed;
-    }
+    float defaultSpeed = 3.5F;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +24,7 @@ public class Chaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ai.speed = speed;
+        ai.speed = defaultSpeed;
 
         dest = player.position;
         ai.destination = dest;

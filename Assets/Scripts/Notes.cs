@@ -9,7 +9,6 @@ public class Notes : MonoBehaviour
     public AudioSource open, close;
 
     bool inRange = false;
-    bool inView = false;
 
     private void OnTriggerStay(Collider other)
     {
@@ -20,7 +19,6 @@ public class Notes : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.E) && inRange == true)
         {
-            inView = true;
             open.Play();
             close.Stop();
             note.SetActive(false);

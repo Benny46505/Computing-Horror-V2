@@ -18,8 +18,8 @@ public class splash : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            SceneManager.LoadScene("MainMenu");
-            Debug.LogWarning("Going To Main");
+            SceneManager.LoadScene("intro");
+            Debug.LogWarning("Going To Tutorial");
         }
     }
 }
