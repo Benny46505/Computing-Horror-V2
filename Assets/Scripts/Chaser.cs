@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Chaser : MonoBehaviour
 {
+    public Collider Insigh
+
     public GameObject FindVL, escapeVL;
 
     public NavMeshAgent ai;
@@ -12,12 +14,22 @@ public class Chaser : MonoBehaviour
     public Transform player;
     Vector3 dest;
 
+    float speed = 3.5f, defaultSpeed;
 
-    //Status
-    public float sightRange;
-    public float waitTime = 2;
-    bool inRange;
-    LayerMask WhatisPlayer;
+    private void OnTriggerExit(Collider other)
+    {
+        speed -= 2;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        speed = defaultSpeed;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        speed = defaultSpeed;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +40,8 @@ public class Chaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ai.speed = speed;
+
         dest = player.position;
         ai.destination = dest;
         if (ScoreSystem.score == 5)
@@ -36,10 +50,6 @@ public class Chaser : MonoBehaviour
         }
         speedphases();
 
-        inRange = Physics.CheckSphere(transform.position, sightRange, WhatisPlayer);
-
-        if (!inRange)
-            Waiting();
     }
 
     #region Extras Methods
@@ -54,27 +64,27 @@ public class Chaser : MonoBehaviour
     {
         if (ScoreSystem.score == 1)
         {
-            ai.speed = 2;
+            defaultSpeed = 2;
         }
 
         if (ScoreSystem.score == 2)
         {
-            ai.speed = 4;
+            defaultSpeed = 4;
         }
 
         if (ScoreSystem.score == 3)
         {
-            ai.speed = 6;
+            defaultSpeed = 6;
         }
 
         if (ScoreSystem.score == 4)
         {
-            ai.speed = 8;
+            defaultSpeed = 8;
         }
 
         if (ScoreSystem.score == 5)
         {
-            ai.speed = 5;
+            defaultSpeed = 5;
         }
     }
 
