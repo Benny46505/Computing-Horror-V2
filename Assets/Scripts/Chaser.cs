@@ -13,7 +13,11 @@ public class Chaser : MonoBehaviour
     public Transform player;
     Vector3 dest;
 
+    public Transform d1;
+
     float defaultSpeed = 3.5F;
+
+    public float waitime;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +36,26 @@ public class Chaser : MonoBehaviour
         {
             phaseEscape();
         }
+
+
         speedphases();
+
+        if (Distraction.isOn == true)
+        {
+            ai.destination = dest;
+            dest = d1.position;
+            StartCoroutine(ResetDest());
+        }
+
+
+        IEnumerator ResetDest()
+        {
+            yield return new WaitForSeconds(waitime);
+            {
+                dest = player.position;
+                ai.destination = dest;
+            }
+        }
 
     }
 
@@ -75,6 +98,11 @@ public class Chaser : MonoBehaviour
     void Waiting()
     {
         
+    }
+
+    void ResetingDest()
+    {
+
     }
 
     #endregion

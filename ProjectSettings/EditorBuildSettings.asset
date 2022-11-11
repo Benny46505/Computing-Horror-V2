@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TEST MAP.unity
     guid: e0bfaa67f9511cb47bd090f7e7611e4d
   - enabled: 1
+    path: Assets/Scenes/ending.unity
+    guid: a7fd397570047b245bb8f49095f6bebe
+  - enabled: 1
     path: Assets/Scenes/Win.unity
     guid: 00c1f88eb676bde41bb572729d385f1f
   - enabled: 1

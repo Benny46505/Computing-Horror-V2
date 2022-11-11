@@ -1,17 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class transition : MonoBehaviour
+public class transition3 : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            SceneManager.LoadScene("ending");
-        }
-    }
+    public string map;
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +17,10 @@ public class transition : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.LoadScene(map);
     }
 }
