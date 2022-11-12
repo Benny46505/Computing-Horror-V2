@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 199.2081, y: -57.236}
+  m_AnchoredPosition: {x: 139.8, y: -57.236}
   m_SizeDelta: {x: 270.6913, y: 66.527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &821987903
@@ -529,7 +529,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -122.31195, y: -52.98332}
+  m_AnchoredPosition: {x: -211.4, y: -52.98332}
   m_SizeDelta: {x: 336.0487, y: 58.0218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096080289
@@ -971,7 +971,7 @@ MonoBehaviour:
     for spooky month! in 2 days
 
 
-    By TheRealBenny & LentelSoup'
+    By TheRealBenny & Qwerty_Werty (LentelSoup)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

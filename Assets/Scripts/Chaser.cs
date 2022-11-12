@@ -23,6 +23,7 @@ public class Chaser : MonoBehaviour
     void Start()
     {
         escapeVL.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -30,34 +31,34 @@ public class Chaser : MonoBehaviour
     {
         ai.speed = defaultSpeed;
 
-        dest = player.position;
+
         ai.destination = dest;
+        dest = player.position;
+
         if (ScoreSystem.score == 5)
         {
             phaseEscape();
         }
 
-
         speedphases();
 
         if (Distraction.isOn == true)
         {
-            ai.destination = dest;
-            dest = d1.position;
-            StartCoroutine(ResetDest());
-        }
-
-
-        IEnumerator ResetDest()
-        {
-            yield return new WaitForSeconds(waitime);
-            {
-                dest = player.position;
-                ai.destination = dest;
-            }
+            ResetingDest();
         }
 
     }
+
+    IEnumerator ResetDest()
+    {
+        yield return new WaitForSeconds(waitime);
+        {
+            dest = player.position;
+            ai.destination = dest;
+            Debug.Log("Enemy Was Reset");
+        }
+    }
+
 
     #region Extras Methods
 
@@ -102,7 +103,16 @@ public class Chaser : MonoBehaviour
 
     void ResetingDest()
     {
+        ai.destination = dest;
+        dest = d1.position;
+        Debug.Log("Enemy Distracted");
 
+        if (ai.remainingDistance == 0)
+        {
+            Distraction.isOn = false;
+            StartCoroutine(ResetDest());
+            Debug.Log("Enemy Switching Back");
+        }
     }
 
     #endregion
