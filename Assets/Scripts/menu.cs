@@ -10,6 +10,8 @@ public class menu : MonoBehaviour
 
     public GameObject beatengametag, beatengametag2, beatengametag3;
 
+    int localProg;
+
     private void Start()
     {
         beatengametag3.SetActive(false);
@@ -46,6 +48,13 @@ public class menu : MonoBehaviour
             beatengametag3.SetActive(false);
         }
 
+        if (WinScene.progress < 0)
+        {
+            beatengametag.SetActive(false);
+            beatengametag2.SetActive(false);
+            beatengametag3.SetActive(false);
+        }
+
         if (WinScene.progress == 2)
         {
             beatengametag.SetActive(true);
@@ -62,34 +71,24 @@ public class menu : MonoBehaviour
 
     }
 
-    void GameBeatenSaves()
+    public void GameSave()
     {
-        if (WinScene.progress == 1)
-        {
-            PlayerPrefs.SetInt("Progress", WinScene.progress);
-            PlayerPrefs.Save();
-            Debug.LogWarning("progress was saved to 1");
-        }
+        PlayerPrefs.SetInt("Win", WinScene.progress);
+        Debug.Log("Saved Data: " + PlayerPrefs.GetInt("Win"));
+    }
 
-        if (WinScene.progress == 2)
-        {
-            PlayerPrefs.SetInt("Progress", WinScene.progress);
-            PlayerPrefs.Save();
-            Debug.LogWarning("progress was saved to 2");
-        }
-
-        if (WinScene.progress == 3)
-        {
-            PlayerPrefs.SetInt("Progress", WinScene.progress);
-            PlayerPrefs.Save();
-            Debug.LogWarning("progress was saved to 3");
-        }
+    public void DeleteSave()
+    {
+        PlayerPrefs.DeleteKey("Win");
+        Debug.Log("Save Deleted: " + PlayerPrefs.GetInt("Win"));
+        WinScene.progress = 0;
     }
 
     private void Update()
     {
+        localProg = WinScene.progress;
+
         GameBeaten();
-        GameBeatenSaves();
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
